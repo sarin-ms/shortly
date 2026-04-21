@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Redirect from "./pages/Redirect";
 import NotFound from "./pages/NotFound";
  
@@ -12,6 +12,7 @@ export default function App() {
         <Route path="/404" element={<NotFound />} />
         <Route path="/:code" element={<Redirect />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
