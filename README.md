@@ -1,16 +1,51 @@
-# React + Vite
+# Shortly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, minimal URL shortener built with React and Supabase.
 
-Currently, two official plugins are available:
+Paste a long URL, get a short one. Track clicks. Add custom aliases.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Shortly](https://img.shields.io/badge/built%20with-React%20%2B%20Supabase-lime?style=flat-square)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Shorten any URL** in one click
+- **Custom aliases** — choose your own slug (e.g. `shortly.app/github`)
+- **Click tracking** — see how many times each link was visited
+- **Dashboard** — manage and delete all your links
+- **Instant redirect** — sub-100ms lookup via Supabase
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Frontend | React (Vite) |
+| Routing | React Router DOM |
+| Styling | Tailwind CSS |
+| Database | Supabase (Postgres) |
+| Short ID | nanoid |
+| Deploy | Vercel |
+
+---
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   └── supabase.js        # Supabase client
+├── pages/
+│   ├── Home.jsx           # Shorten form + result
+│   ├── Dashboard.jsx      # All links, click counts, delete
+│   ├── Redirect.jsx       # /:code → fetches URL → redirects
+│   └── NotFound.jsx       # 404 fallback
+└── App.jsx                # Route definitions
+```
+
+---
+Live demo: [shortly.app](https://shortlyyy.vercel.app)
+
+---
